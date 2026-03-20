@@ -8,7 +8,7 @@ export interface Producer {
   website: string;
   description: string;
   fiberTypes: string[];
-  logo: string | null;
+  image: string | null;
   lat: number;
   lng: number;
   orderType: OrderType;
