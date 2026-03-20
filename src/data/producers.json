@@ -110,5 +110,19 @@
     "lng": 14.975,
     "orderType": "other",
     "orderDetails": "Contact by email or telephone"
+  },
+  {
+    "id": 9,
+    "name": "Östergötlands Ullspinneri",
+    "location": "Ödeshög",
+    "region": "Östergötland",
+    "website": "https://ullspinneriet.se",
+    "description": "Family-run wool spinning mill founded in 1981 by Ulla-Karin Hellsten and Börje Norberg. Produces high-quality Swedish wool yarn and textiles using vintage mechanical machines. Famous for the award-winning 'Bää' wool blanket and exports extensively to Japan.",
+    "fiberTypes": ["Wool"],
+    "logo": null,
+    "lat": 58.224,
+    "lng": 14.660,
+    "orderType": "webshop",
+    "orderDetails": null
   }
 ]
