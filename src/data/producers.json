@@ -222,5 +222,33 @@
     "lng": 21.689,
     "orderType": "other",
     "orderDetails": "Order via Instagram @hojdensfargard"
+  },
+  {
+    "id": 17,
+    "name": "Eufåria",
+    "location": "Svensbyn",
+    "region": "Norrbotten",
+    "website": "https://www.eufaria.se",
+    "description": "Family farm near Piteå run by Josefin and David, raising sheep on the Norrbotten coast. Produces 2-ply yarn spun from a blend of Gotland and fine crossbreed wool. Yarn is available in natural grey shades as well as hand-dyed colours. Also sells lamb skins.",
+    "fiberTypes": ["Gotland wool", "Finull blend"],
+    "logo": null,
+    "lat": 65.385,
+    "lng": 21.395,
+    "orderType": "other",
+    "orderDetails": "Email josefin@eufaria.se or visit the farm shop (Thu 18–20). Ships via PostNord with Swish payment."
+  },
+  {
+    "id": 18,
+    "name": "Ekogården i Kräkånger",
+    "location": "Lövånger",
+    "region": "Västerbotten",
+    "website": "https://ekogardenikrakanger.se",
+    "description": "KRAV-certified organic farm by the Västerbotten coast, run by Regina and Oskar Berg. Sheep graze on coastal meadows and the farm produces wool yarn and carded roving from their own flock, as well as handwoven wool blankets, lamb skins, and organic vegetables.",
+    "fiberTypes": ["Wool"],
+    "logo": null,
+    "lat": 64.362,
+    "lng": 21.354,
+    "orderType": "other",
+    "orderDetails": "Order via the farm shop, REKO rings in Umeå & Skellefteå, or by post (Swish payment in advance)"
   }
 ]
