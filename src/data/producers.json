@@ -250,5 +250,33 @@
     "lng": 21.354,
     "orderType": "other",
     "orderDetails": "Order via the farm shop, REKO rings in Umeå & Skellefteå, or by post (Swish payment in advance)"
+  },
+  {
+    "id": 19,
+    "name": "Avangården",
+    "location": "Luleå",
+    "region": "Norrbotten",
+    "website": "https://avangarden.se",
+    "description": "Sheep farm and yarn producer located just outside Luleå in Norrbotten.",
+    "fiberTypes": ["Wool"],
+    "logo": null,
+    "lat": 65.584,
+    "lng": 22.157,
+    "orderType": "other",
+    "orderDetails": "See website for ordering details"
+  },
+  {
+    "id": 20,
+    "name": "Yarns & Barns",
+    "location": "Ås",
+    "region": "Jämtland",
+    "website": "https://yarnsandbarns.com",
+    "description": "Yarn producer located in Ås, Jämtland.",
+    "fiberTypes": ["Wool"],
+    "logo": null,
+    "lat": 63.247,
+    "lng": 14.494,
+    "orderType": "webshop",
+    "orderDetails": null
   }
 ]
