@@ -197,17 +197,17 @@
   },
   {
     "id": 15,
-    "name": "Jakobsgården",
+    "name": "Jakobgården",
     "location": "Överkalix",
     "region": "Norrbotten",
-    "website": "https://www.instagram.com/jacobsgarden/",
+    "website": "https://www.instagram.com/jakobgarden/",
     "description": "Small sheep farm and yarn producer run by Katarina Karlsson in Överkalix, Norrbotten. Produces yarn from locally raised sheep in the far north of Sweden.",
     "fiberTypes": ["Wool"],
     "logo": null,
     "lat": 66.333,
     "lng": 22.833,
     "orderType": "other",
-    "orderDetails": "Order via Instagram @jacobsgarden"
+    "orderDetails": "Order via Instagram @jakobgarden"
   },
   {
     "id": 16,
