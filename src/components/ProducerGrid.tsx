@@ -11,6 +11,7 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
   const [search, setSearch] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [selectedFiber, setSelectedFiber] = useState("All");
+  const [selectedOrderType, setSelectedOrderType] = useState("All");
   const [sortBy, setSortBy] = useState("none");
 
   const regions = useMemo(() => {
@@ -37,7 +38,13 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
       const matchesFiber =
         selectedFiber === "All" || p.fiberTypes.includes(selectedFiber);
 
-      return matchesSearch && matchesRegion && matchesFiber;
+      const matchesOrderType =
+        selectedOrderType === "All" ||
+        (selectedOrderType === "webshop" && p.orderType === "webshop") ||
+        (selectedOrderType === "other" && p.orderType === "other") ||
+        (selectedOrderType === "none" && p.orderType === null);
+
+      return matchesSearch && matchesRegion && matchesFiber && matchesOrderType;
     });
 
     if (sortBy === "none") return results;
@@ -46,7 +53,7 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
       if (sortBy === "name-desc") return b.name.localeCompare(a.name, "sv");
       return 0;
     });
-  }, [producers, search, selectedRegion, selectedFiber, sortBy]);
+  }, [producers, search, selectedRegion, selectedFiber, selectedOrderType, sortBy]);
 
   return (
     <div className="producer-grid__wrapper">
@@ -84,6 +91,18 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
               {f === "All" ? "All fibers" : f}
             </option>
           ))}
+        </select>
+
+        <select
+          value={selectedOrderType}
+          onChange={(e) => setSelectedOrderType(e.target.value)}
+          className="producer-grid__select"
+          aria-label="Filter by order type"
+        >
+          <option value="All">All ordering</option>
+          <option value="webshop">Webshop</option>
+          <option value="other">Other ordering</option>
+          <option value="none">No ordering info</option>
         </select>
 
         <select
