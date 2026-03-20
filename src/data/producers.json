@@ -262,8 +262,8 @@
     "logo": null,
     "lat": 65.584,
     "lng": 22.157,
-    "orderType": "other",
-    "orderDetails": "See website for ordering details"
+    "orderType": "webshop",
+    "orderDetails": null
   },
   {
     "id": 20,
