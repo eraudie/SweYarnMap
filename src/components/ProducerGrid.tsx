@@ -11,6 +11,7 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
   const [search, setSearch] = useState("");
   const [selectedRegion, setSelectedRegion] = useState("All");
   const [selectedFiber, setSelectedFiber] = useState("All");
+  const [sortBy, setSortBy] = useState("none");
 
   const regions = useMemo(() => {
     const all = producers.map((p) => p.region);
@@ -23,7 +24,7 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
   }, [producers]);
 
   const filtered = useMemo(() => {
-    return producers.filter((p) => {
+    const results = producers.filter((p) => {
       const matchesSearch =
         search === "" ||
         p.name.toLowerCase().includes(search.toLowerCase()) ||
@@ -38,7 +39,14 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
 
       return matchesSearch && matchesRegion && matchesFiber;
     });
-  }, [producers, search, selectedRegion, selectedFiber]);
+
+    if (sortBy === "none") return results;
+    return [...results].sort((a, b) => {
+      if (sortBy === "name-asc") return a.name.localeCompare(b.name, "sv");
+      if (sortBy === "name-desc") return b.name.localeCompare(a.name, "sv");
+      return 0;
+    });
+  }, [producers, search, selectedRegion, selectedFiber, sortBy]);
 
   return (
     <div className="producer-grid__wrapper">
@@ -76,6 +84,17 @@ export function ProducerGrid({ producers }: ProducerGridProps) {
               {f === "All" ? "All fibers" : f}
             </option>
           ))}
+        </select>
+
+        <select
+          value={sortBy}
+          onChange={(e) => setSortBy(e.target.value)}
+          className="producer-grid__select producer-grid__sort"
+          aria-label="Sort producers"
+        >
+          <option value="none">No sorting</option>
+          <option value="name-asc">Name A–Z</option>
+          <option value="name-desc">Name Z–A</option>
         </select>
       </div>
 

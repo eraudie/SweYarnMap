@@ -44,7 +44,18 @@
   border-color: var(--color-accent);
 }
 
-.producer-grid__count {
+.producer-grid__sort {
+  margin-left: auto;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .producer-grid__sort {
+    margin-left: 0;
+  }
+}.producer-grid__count {
   font-size: 0.85rem;
   color: var(--color-text-secondary);
   margin: 0 0 1rem;
