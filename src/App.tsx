@@ -49,7 +49,16 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Data stored in <code>src/data/producers.json</code> — edit that file to update the list.</p>
+        <p>
+          <a
+            href="https://github.com/eraudie/SweYarnMap"
+            target="_blank"
+            rel="noreferrer"
+            className="app-footer__link"
+          >
+            View on GitHub
+          </a>
+        </p>
       </footer>
     </>
   )
