@@ -1,73 +1,57 @@
-# React + TypeScript + Vite
+# SweYarnMap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A directory of Swedish yarn producers — browse by grid or map, filter by region and fiber type, and sort by name.
 
-Currently, two official plugins are available:
+Built with React + TypeScript + Vite. No backend, no login — just a static site driven by a single JSON file.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Grid view** — producer cards with name, location, fiber types, and ordering info
+- **Map view** — OpenStreetMap with color-coded markers (pink = webshop, orange = other ordering)
+- **Search & filter** — by name/description/location, region, and fiber type
+- **Sort** — A–Z or Z–A by name
+- **20+ producers** included out of the box
 
-## Expanding the ESLint configuration
+## Adding or editing producers
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+All data lives in [`src/data/producers.json`](src/data/producers.json). Each producer has the following fields:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Field | Type | Description |
+|---|---|---|
+| `id` | number | Unique identifier |
+| `name` | string | Producer name |
+| `location` | string | City or village |
+| `region` | string | Swedish region/landskap |
+| `website` | string | URL |
+| `description` | string | Short description |
+| `fiberTypes` | string[] | e.g. `["Wool", "Alpaca"]` |
+| `image` | string \| null | URL or `/images/filename.jpg` |
+| `lat` / `lng` | number | Coordinates for the map |
+| `orderType` | `"webshop"` \| `"other"` \| null | How to order |
+| `orderDetails` | string \| null | Extra ordering info |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Drop images into `public/images/` and reference them as `"/images/filename.jpg"`.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Development
+
+```bash
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # production build → dist/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Deployment
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+The project is configured for **Netlify** via [`netlify.toml`](netlify.toml).  
+Connect the GitHub repository at [app.netlify.com](https://app.netlify.com) — build settings are auto-detected.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech stack
+
+- [Vite](https://vitejs.dev) + [React 18](https://react.dev) + TypeScript
+- [React Leaflet](https://react-leaflet.js.org) / [OpenStreetMap](https://www.openstreetmap.org)
+- Plain CSS with custom properties (no CSS framework)
+- Google Fonts: Playfair Display + Nunito
+
+
