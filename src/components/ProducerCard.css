@@ -63,7 +63,8 @@
 }
 
 .card__name {
-  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-text-primary);
   margin: 0;
