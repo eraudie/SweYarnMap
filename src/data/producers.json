@@ -194,5 +194,33 @@
     "lng": 18.706,
     "orderType": "webshop",
     "orderDetails": null
+  },
+  {
+    "id": 15,
+    "name": "Jakobsgården",
+    "location": "Överkalix",
+    "region": "Norrbotten",
+    "website": "https://www.instagram.com/jacobsgarden/",
+    "description": "Small sheep farm and yarn producer run by Katarina Karlsson in Överkalix, Norrbotten. Produces yarn from locally raised sheep in the far north of Sweden.",
+    "fiberTypes": ["Wool"],
+    "logo": null,
+    "lat": 66.333,
+    "lng": 22.833,
+    "orderType": "other",
+    "orderDetails": "Order via Instagram @jacobsgarden"
+  },
+  {
+    "id": 16,
+    "name": "Höjdens Fårgård",
+    "location": "Boden",
+    "region": "Norrbotten",
+    "website": "https://hojdensfargard.se",
+    "description": "Sheep farm and yarn producer run by Annelie Hansson, located in Boden, Norrbotten. Produces yarn from their own flock in the northern Swedish landscape.",
+    "fiberTypes": ["Wool"],
+    "logo": null,
+    "lat": 65.825,
+    "lng": 21.689,
+    "orderType": "other",
+    "orderDetails": "Order via Instagram @hojdensfargard"
   }
 ]
